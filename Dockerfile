@@ -19,6 +19,4 @@ RUN venv/bin/python -m pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN chmod +x start.sh
-
-CMD ["bash","start.sh"]
+CMD gunicorn app:app & python3 bot.py
